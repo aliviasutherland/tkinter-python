@@ -1,4 +1,11 @@
+"""Author: Alivia sutherland
+Date Written: 2/24/24
+Assignemnt: final project
+Short description: import gui to create housekeeping schedule ."""
 
+
+
+#type yes or no to schedule an appointment
 print ("Would you like to schedule an appointment with housekeeping?")
 valid_response = False
 while not valid_response:
@@ -10,31 +17,33 @@ while not valid_response:
  
 from tkinter import *
  
-
+#import tkinter
+#import calendar from python
 import calendar
  
 def showCal() :
  
-   
+   #create new gui
     new_gui = Tk()
-     
+ #create size of gui calendar
+    new_gui.geometry("600x600")
+     # create background color
     new_gui.config(background = "black")
- 
+    #title calendar
     new_gui.title("HOUSEKEEPING CALENDAR")
  
-    new_gui.geometry("600x600")
- 
+    #insert year 
     fetch_year = int(year_field.get())
  
-    
+    #create calendar with year
     cal_content = calendar.calendar(fetch_year)
- 
+      #create calendar with font
     cal_year = Label(new_gui, text = cal_content, font = "Consolas 10 bold")
  
-   
+   #create grid
     cal_year.grid(row = 5, column = 1, padx = 20)
      
-  
+  #loop
     new_gui.mainloop()
  
      
@@ -50,6 +59,8 @@ if __name__ == "__main__" :
  
    
     gui.geometry("250x140")
+    
+    #colors and fonts
  
     cal = Label(gui, text = "CALENDAR", bg = "dark gray",
                             font = ("times", 28, 'bold'))
@@ -64,6 +75,7 @@ if __name__ == "__main__" :
  
     Exit = Button(gui, text = "Exit", fg = "Black", bg = "Red", command = exit)
      
+     #size of grids
    
     cal.grid(row = 1, column = 1)
  
@@ -77,6 +89,8 @@ if __name__ == "__main__" :
      
    
     gui.mainloop()
+
+    #this is where they will choose the actual date. working on this portion
 
     print ("Now choose a date that is suitable for you")
     valid_response = False
