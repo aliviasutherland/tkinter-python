@@ -87,16 +87,26 @@ if __name__ == "__main__" :
  
     Exit.grid(row = 6, column = 1)
      
-   
+  
     gui.mainloop()
+    from tkinter import *
 
-    #this is where they will choose the actual date. working on this portion
+    #this is to create a message GUI
+main = Tk()
+ourMessage ='Our available dates are 2/2/24 or 7/8/24'
+messageVar = Message(main, text = ourMessage)
+messageVar.config(bg='lightgreen')
+messageVar.pack( )
+main.mainloop( )
+# this creates a check button GUI
+from tkinter import *
+master = Tk()
+var1 = IntVar()
+Checkbutton(master, text='2/2/24', variable=var1).grid(row=0, sticky=W)
+var2 = IntVar()
+Checkbutton(master, text='7/8/24', variable=var2).grid(row=1, sticky=W)
 
-    print ("Now choose a date that is suitable for you")
-    valid_response = False
-while not valid_response:
-    response = input("Enter 'yes' or 'no': ")
-    if response.lower() == 'yes' or response.lower() == 'no':
-        valid_response = True
-    else:
-        print("Invalid response. Please enter 'yes' or 'no'.")
+mainloop()
+ 
+
+print ("Thank you for choosing a date that is suitable for you")
